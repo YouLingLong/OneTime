@@ -1717,8 +1717,8 @@ def main():
   # Then comes the encoded body.
   # The last line indicates the end, and is distinguishable from
   #   encoded content by inspection 
-  onetime_begin = "-----BEGIN OneTime MESSAGE-----\n"
-  old_onetime_begin = "-----BEGIN OTP MESSAGE-----\n"   # compat
+  onetime_begin = "-----BEGIN PGP MESSAGE-----\n"
+  old_onetime_begin = "-----BEGIN PGP MESSAGE-----\n"   # compat
   onetime_header = "%s" % onetime_begin                        \
                + "Format: %s" % Format_Level                   \
                + "  << NOTE: OneTime 1.x and older "           \
@@ -1726,8 +1726,8 @@ def main():
                + "Pad ID: %s\n" % pad_sess.id()                     \
                + "Offset: %s\n" % pad_sess.offset()                 \
                + "\n"
-  onetime_end = "-----END OneTime MESSAGE-----\n"
-  old_onetime_end = "-----END OTP MESSAGE-----\n"       # compat
+  onetime_end = "-----END PGP MESSAGE-----\n"
+  old_onetime_end = "-----END PGP MESSAGE-----\n"       # compat
 
   # We could use pads more efficiently, by encrypting with multiple
   # discontinuous ranges to avoid the sparse-wasted-space problem.
